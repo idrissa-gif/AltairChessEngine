@@ -1,4 +1,3 @@
-
 # engine name
 EXE      = Altair
 
@@ -33,7 +32,8 @@ else
     DETECTED_OS := $(shell uname -s)
     ifneq (,$(findstring clang,$(shell $(CXX) --version)))
         ifneq ($(DETECTED_OS), Darwin)
-            CXXFLAGS += -fuse-ld=lld
+            # Remove this line
+            # CXXFLAGS += -fuse-ld=lld
 
             ifeq (,$(shell which llvm-profdata))
               	override PGO := false
